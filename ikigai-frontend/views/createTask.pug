@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    #contact.w3-container.w3-content.w3-padding-64(style='max-width:800px')
+        h2.w3-wide.w3-center ADD A TASK
+        p.w3-opacity.w3-center
+            i Even the smallest of tasks can have large impacts on your journey.
+        if(message)
+            p.w3-opacity.w3-center(id="error")=message
+        .w3-row.w3-padding-32
+                form(action='/user/createTask' method='Post')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Title' required='' name='title')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Content' required='' name='content')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Category' required='' name='category')
+                    button.w3-button.w3-black.w3-section.w3-right(type='submit') ADD

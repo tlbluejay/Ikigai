@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+    #contact.w3-container.w3-content.w3-padding-64(style='max-width:800px')
+        h2.w3-wide.w3-center UPDATE YOUR ACCOUNT
+        if(message)
+            p.w3-opacity.w3-center(id="error")=message
+        .w3-row.w3-padding-32
+                form(action='/users/settings/:' + userUuid, method='patch')
+
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Name' value=name required='' name='name')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Email' value=email required='' name='email')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='text' placeholder='Username' value=username required='' name='username')
+                    .w3-row-padding(style='margin:0 -16px 8px -16px')
+                        input.w3-input.w3-border(type='password' placeholder='Password' required='' name='password')
+                    button.w3-button.w3-black.w3-section.w3-right(type='submit') UPDATE

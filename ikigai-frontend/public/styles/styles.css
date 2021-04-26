@@ -1,0 +1,15 @@
+h1 {
+    color: white;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+
+#error{
+    color:red;
+}
+
+html {
+    background-color: #191a26;
+    color: white;
+}

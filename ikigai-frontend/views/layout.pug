@@ -1,0 +1,24 @@
+html
+    head
+        title=title
+        link(href="/styles/styles.css", rel="stylesheet", type="text/css")
+        link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+        block extraCss
+    body
+        div(class="mainContainer")
+            header
+                .w3-top
+                    .w3-bar.w3-black.w3-card
+                        a.w3-bar-item.w3-button.w3-padding-large(href='/') HOME
+                        if(username)
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href="/user/profile/:"+userUuid) DASHBOARD
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href="/") FRIENDS WIP
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href="/user/logout") LOGOUT
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small.w3-right(href='/user/settings/:'+userUuid) SETTINGS
+                        else
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href="/user/register") REGISTER
+                            a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href="/user/login") LOGIN
+            .w3-content(style='max-width:2000px;margin-top:46px')
+            block content
+    block scripts
+                    
